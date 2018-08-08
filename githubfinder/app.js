@@ -1,6 +1,6 @@
-// Instantiate Github
-const github = new GitHub();
-// Instantiate UI
+// Init Github
+const github = new Github();
+// Init UI
 const ui = new UI();
 
 // Search input
@@ -8,7 +8,7 @@ const searchUser = document.getElementById('searchUser');
 
 // Search input event listener
 searchUser.addEventListener('keyup', e => {
-  // Get the input text
+  // Get input text
   const userText = e.target.value;
 
   if (userText !== '') {
@@ -20,6 +20,7 @@ searchUser.addEventListener('keyup', e => {
       } else {
         // Show profile
         ui.showProfile(data.profile);
+        ui.showRepos(data.repos);
       }
     });
   } else {
